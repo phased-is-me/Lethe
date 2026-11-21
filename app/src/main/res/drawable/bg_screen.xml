@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Матовый фон: мягкий градиент + два размытых цветных пятна -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <gradient android:angle="270" android:endColor="@color/bg_bottom" android:startColor="@color/bg_top" android:type="linear" />
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="rectangle">
+            <gradient android:centerX="0.1" android:centerY="0.08" android:endColor="#00B8AEFF" android:gradientRadius="380dp" android:startColor="#2EB8AEFF" android:type="radial" />
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="rectangle">
+            <gradient android:centerX="0.95" android:centerY="0.7" android:endColor="#008FD9CC" android:gradientRadius="420dp" android:startColor="#248FD9CC" android:type="radial" />
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="rectangle">
+            <gradient android:centerX="0.2" android:centerY="1.0" android:endColor="#00FFC9B0" android:gradientRadius="360dp" android:startColor="#1FFFC9B0" android:type="radial" />
+        </shape>
+    </item>
+</layer-list>

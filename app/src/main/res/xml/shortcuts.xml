@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Долгое нажатие на иконку → «Новая запись»: сразу режим исчезающих слов -->
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut
+        android:enabled="true"
+        android:icon="@drawable/ic_shortcut_write"
+        android:shortcutId="write"
+        android:shortcutLongLabel="@string/shortcut_write_long"
+        android:shortcutShortLabel="@string/shortcut_write">
+        <intent
+            android:action="android.intent.action.MAIN"
+            android:targetClass="app.lethe.MainActivity"
+            android:targetPackage="app.lethe" />
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetClass="app.lethe.WriteActivity"
+            android:targetPackage="app.lethe" />
+    </shortcut>
+</shortcuts>

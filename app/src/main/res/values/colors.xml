@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Текст -->
+    <color name="ink">#FF1C1C1E</color>
+    <color name="ink_soft">#FF7A7A84</color>
+    <color name="ink_faint">#FFB4B4BC</color>
+
+    <!-- Фон (матовый, светлый) -->
+    <color name="bg_top">#FFF4F3F8</color>
+    <color name="bg_bottom">#FFECEEF3</color>
+    <color name="canvas">#FFFFFFFF</color>
+
+    <!-- Поверхности -->
+    <color name="glass">#C7FFFFFF</color>
+    <color name="glass_stroke">#E6FFFFFF</color>
+    <color name="pill_light">#FFF1F1F4</color>
+    <color name="pill_dark">#FF1C1C1E</color>
+    <color name="ripple_dark">#14000000</color>
+    <color name="ripple_light">#33FFFFFF</color>
+    <color name="selection">#331C1C1E</color>
+</resources>
