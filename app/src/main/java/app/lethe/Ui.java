@@ -7,10 +7,10 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
-/** Мелкие помощники: dp, даты по-русски, склонения. */
+/** Small helpers: dp conversion, dates and word counts. */
 final class Ui {
 
-    private static final Locale RU = Locale.forLanguageTag("ru");
+    private static final Locale EN = Locale.ENGLISH;
 
     private Ui() {
     }
@@ -19,22 +19,22 @@ final class Ui {
         return Math.round(value * c.getResources().getDisplayMetrics().density);
     }
 
-    /** «Сегодня, 19:13», «Вчера, 08:41», «3 ноября, 22:05», «3 ноября 2025, 22:05». */
+    /** "Today, 19:13", "Yesterday, 08:41", "November 3, 22:05", "November 3, 2025, 22:05". */
     static String formatWhen(long millis) {
         Calendar now = Calendar.getInstance();
         Calendar then = Calendar.getInstance();
         then.setTimeInMillis(millis);
         Date date = new Date(millis);
-        String time = new SimpleDateFormat("HH:mm", RU).format(date);
+        String time = new SimpleDateFormat("HH:mm", EN).format(date);
 
-        if (sameDay(now, then)) return "Сегодня, " + time;
+        if (sameDay(now, then)) return "Today, " + time;
         Calendar yesterday = (Calendar) now.clone();
         yesterday.add(Calendar.DAY_OF_YEAR, -1);
-        if (sameDay(yesterday, then)) return "Вчера, " + time;
+        if (sameDay(yesterday, then)) return "Yesterday, " + time;
         if (now.get(Calendar.YEAR) == then.get(Calendar.YEAR)) {
-            return new SimpleDateFormat("d MMMM, HH:mm", RU).format(date);
+            return new SimpleDateFormat("MMMM d, HH:mm", EN).format(date);
         }
-        return new SimpleDateFormat("d MMMM yyyy, HH:mm", RU).format(date);
+        return new SimpleDateFormat("MMMM d, yyyy, HH:mm", EN).format(date);
     }
 
     private static boolean sameDay(Calendar a, Calendar b) {
@@ -53,27 +53,17 @@ final class Ui {
         return count;
     }
 
-    /** Русское склонение: plural(5, "слово", "слова", "слов") → «5 слов». */
-    static String plural(int n, String one, String few, String many) {
-        int mod100 = n % 100;
-        int mod10 = n % 10;
-        String word;
-        if (mod100 >= 11 && mod100 <= 14) word = many;
-        else if (mod10 == 1) word = one;
-        else if (mod10 >= 2 && mod10 <= 4) word = few;
-        else word = many;
-        return n + " " + word;
-    }
-
+    /** "1 word", "5 words". */
     static String words(int n) {
-        return plural(n, "слово", "слова", "слов");
+        return n + (n == 1 ? " word" : " words");
     }
 
+    /** "1 note", "12 notes". */
     static String notes(int n) {
-        return plural(n, "запись", "записи", "записей");
+        return n + (n == 1 ? " note" : " notes");
     }
 
-    /** Убирает пробелы и переносы в конце текста. */
+    /** Removes trailing spaces and line breaks. */
     static String trimEnd(String s) {
         int end = s.length();
         while (end > 0 && Character.isWhitespace(s.charAt(end - 1))) end--;

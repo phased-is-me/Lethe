@@ -2,22 +2,22 @@
 <resources>
     <string name="app_name">Lethe</string>
 
-    <string name="title_notes">Заметки</string>
-    <string name="new_entry">Новая запись</string>
-    <string name="empty_state">Здесь пока пусто.\n\nНажмите «Новая запись» и печатайте: каждое слово плавно исчезнет после пробела, а целиком текст будет виден только здесь.</string>
+    <string name="title_notes">Notes</string>
+    <string name="new_entry">New entry</string>
+    <string name="empty_state">Nothing here yet.\n\nTap “New entry” and start typing: each word fades away after a space, and the full text appears only here.</string>
 
-    <string name="done">Готово</string>
-    <string name="start_typing">Начните печатать</string>
+    <string name="done">Done</string>
+    <string name="start_typing">Start typing</string>
 
-    <string name="back">Назад</string>
-    <string name="continue_hidden">Продолжить скрытно</string>
-    <string name="share">Поделиться</string>
-    <string name="delete">Удалить</string>
-    <string name="cancel">Отмена</string>
-    <string name="delete_title">Удалить заметку?</string>
-    <string name="delete_message">Её нельзя будет восстановить.</string>
-    <string name="note_hint">Текст заметки</string>
+    <string name="back">Back</string>
+    <string name="continue_hidden">Continue in fade mode</string>
+    <string name="share">Share</string>
+    <string name="delete">Delete</string>
+    <string name="cancel">Cancel</string>
+    <string name="delete_title">Delete this note?</string>
+    <string name="delete_message">This can’t be undone.</string>
+    <string name="note_hint">Note text</string>
 
-    <string name="shortcut_write">Новая запись</string>
-    <string name="shortcut_write_long">Новая скрытая запись</string>
+    <string name="shortcut_write">New entry</string>
+    <string name="shortcut_write_long">New hidden entry</string>
 </resources>

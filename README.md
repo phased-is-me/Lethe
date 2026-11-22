@@ -1,64 +1,64 @@
 # Lethe
 
-*Лета — река забвения в греческом подземном мире. Слова растворяются на экране, как в её водах,
-но в заметке остаются целиком.*
+*Lethe is the river of forgetfulness in the Greek underworld. Words dissolve on screen as if in
+its waters, yet remain whole in the note.*
 
-Минималистичное приложение для заметок на Android. В режиме набора на экране видно только
-текущее слово: после пробела оно плавно исчезает. Весь текст становится виден после выхода из режима.
+A minimalist note-taking app for Android. In fade mode, only the word you are typing is visible:
+after a space, it fades away. The full text appears once you leave the mode.
 
-## Возможности
+## Features
 
-- Режим исчезающих слов. Экран разделён на белое полотно и клавиатуру, законченные слова исчезают и больше не редактируются.
-- Редактор заметки с полным текстом, кнопками «Поделиться» и «Удалить».
-- Продолжение записи в режиме исчезающих слов прямо из открытой заметки.
-- Список заметок с датой и временем создания.
-- Ярлык «Новая запись» по долгому нажатию на иконку приложения.
-- Только вертикальная ориентация экрана.
+- Fade mode. The screen is split between a white canvas and the keyboard; finished words fade away and can no longer be edited.
+- Note editor with the full text, plus Share and Delete actions.
+- Continue writing in fade mode from any open note.
+- Note list with creation date and time.
+- "New entry" shortcut on a long press of the app icon.
+- Portrait orientation only.
 
-## Приватность
+## Privacy
 
-- Исчезнувшие слова нельзя удалить или изменить, курсор нельзя вернуть назад.
-- Клавиатуре передаётся флаг `IME_FLAG_NO_PERSONALIZED_LEARNING`: ввод не используется для её обучения.
-- Содержимое экранов скрыто в списке недавних приложений.
-- Приложение не использует сеть и не запрашивает разрешений.
+- Faded words cannot be deleted or changed, and the cursor cannot be moved back.
+- The keyboard receives `IME_FLAG_NO_PERSONALIZED_LEARNING`, so input is not used to train it.
+- Screen content is hidden in the Recents view.
+- The app does not use the network and requests no permissions.
 
-## Хранение
+## Storage
 
-Каждая заметка хранится как текстовый файл UTF-8 во внутренней памяти приложения:
-`files/notes/<timestamp>.txt`, где `timestamp` — время создания в миллисекундах.
-Изменения сохраняются автоматически.
+Each note is stored as a UTF-8 text file in the app's internal storage:
+`files/notes/<timestamp>.txt`, where `timestamp` is the creation time in milliseconds.
+Changes are saved automatically.
 
-## Сборка
+## Building
 
-Требования: JDK 17+, Android SDK 37.
+Requirements: JDK 17+, Android SDK 37.
 
 ```bash
 ./gradlew assembleDebug        # Windows: gradlew.bat assembleDebug
 ```
 
-Готовый файл: `app/build/outputs/apk/debug/app-debug.apk`.
+Output: `app/build/outputs/apk/debug/app-debug.apk`.
 
-В Android Studio: Build → Generate App Bundles or APKs → Generate APKs.
+In Android Studio: Build → Generate App Bundles or APKs → Generate APKs.
 
-## Технические параметры
+## Technical details
 
-| Параметр | Значение |
+| Parameter | Value |
 |---|---|
-| Язык | Java 17, без сторонних библиотек |
+| Language | Java 17, no third-party libraries |
 | minSdk / targetSdk / compileSdk | 33 / 36 / 37 |
-| Сборка | Android Gradle Plugin 9.5, Gradle 9.6 |
+| Build | Android Gradle Plugin 9.5, Gradle 9.6 |
 
-## Структура
+## Structure
 
-| Класс | Назначение |
+| Class | Purpose |
 |---|---|
-| `MainActivity` | Список заметок |
-| `WriteActivity` | Режим исчезающих слов |
-| `NoteActivity` | Просмотр и редактирование заметки |
-| `NoteStore` | Чтение и запись файлов заметок |
-| `TrapEditText` | Поле ввода, курсор которого всегда стоит в конце текста |
-| `Ui` | Форматирование дат и склонения |
+| `MainActivity` | Note list |
+| `WriteActivity` | Fade mode |
+| `NoteActivity` | Viewing and editing a note |
+| `NoteStore` | Reading and writing note files |
+| `TrapEditText` | Input field whose cursor always stays at the end of the text |
+| `Ui` | Date formatting and word counts |
 
-## Сторонние ресурсы
+## Third-party assets
 
-Шрифт Carlito распространяется по лицензии SIL Open Font License 1.1, текст лицензии — в файле `FONT-LICENSE-Carlito.txt`.
+The Carlito font is distributed under the SIL Open Font License 1.1; see `FONT-LICENSE-Carlito.txt`.
