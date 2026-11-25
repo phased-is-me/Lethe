@@ -30,13 +30,16 @@ Changes are saved automatically.
 
 ## Building
 
-Requirements: JDK 17+, Android SDK 37.
+Install OpenJDK 25 and Android SDK Platform 37. Set `JAVA_HOME` to the JDK directory
+and `ANDROID_HOME` to the Android SDK directory.
 
 ```bash
-./gradlew assembleDebug        # Windows: gradlew.bat assembleDebug
+bash ./gradlew assembleDebug
+bash ./gradlew assembleRelease
 ```
 
-Output: `app/build/outputs/apk/debug/app-debug.apk`.
+On Windows, use `.\gradlew.bat assembleDebug` or `.\gradlew.bat assembleRelease`.
+The APKs are written to `app/build/outputs/apk/`. The release APK is unsigned.
 
 In Android Studio: Build → Generate App Bundles or APKs → Generate APKs.
 
@@ -44,7 +47,7 @@ In Android Studio: Build → Generate App Bundles or APKs → Generate APKs.
 
 | Parameter | Value |
 |---|---|
-| Language | Java 17, no third-party libraries |
+| Language | Java 17 |
 | minSdk / targetSdk / compileSdk | 33 / 36 / 37 |
 | Build | Android Gradle Plugin 9.5, Gradle 9.6 |
 
@@ -61,4 +64,5 @@ In Android Studio: Build → Generate App Bundles or APKs → Generate APKs.
 
 ## Third-party assets
 
-The Carlito font is distributed under the SIL Open Font License 1.1; see `FONT-LICENSE-Carlito.txt`.
+The Carlito font is distributed under the SIL Open Font License 1.1. Its
+[license](app/src/main/assets/licenses/Carlito-OFL.txt) is included in the APK.
